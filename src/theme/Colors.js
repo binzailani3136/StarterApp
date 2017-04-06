@@ -23,9 +23,7 @@ const colors = {
   rippleSecondary: '#27C87D50',
   rippleThird: '#1E80C750',
 
-  alphaPrimary: '#F0F3EA90',
-  golden: '#FFAA00',
-  greycolor: '#AAAAAA',
+
 };
 
 export default colors;

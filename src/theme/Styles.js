@@ -168,44 +168,6 @@ const Styles = {
     ...Fonts.style.h6,
     color: Colors.textThird,
   },
-
-
-
-
-
-
-
-
-
-
-
-  buttonShadow: {
-    shadowOpacity: 0.3,
-    shadowOffset: {
-      width: 0, height: 8,
-    },
-    shadowColor: '#000',
-    shadowRadius: 4,
-    elevation: 8,
-  },
-  buttonShadowSmall: {
-    shadowOpacity: 0.3,
-    shadowOffset: {
-      width: 0, height: 3,
-    },
-    shadowColor: '#000',
-    shadowRadius: 2,
-    elevation: 3,
-  },
-  circleButtonShadow: {
-    shadowOpacity: 0.3,
-    shadowOffset: {
-      width: 0, height: 4,
-    },
-    shadowColor: '#000',
-    shadowRadius: 2,
-    elevation: 4,
-  },
 };
 
 export default Styles;
