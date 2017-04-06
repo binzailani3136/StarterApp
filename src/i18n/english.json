@@ -1,0 +1,30 @@
+{
+   "APP_NAME": "StarterApp",
+   "WELCOME": "WELCOME",
+   "UPLOAD_PHOTO": "UPLOAD YOUR PHOTO",
+   "USERNAME": "USERNAME",
+   "EMAIL": "EMAIL",
+   "PASSWORD": "PASSWORD",
+   "CREATE_PASSWORD": "CREATE PASSWORD",
+   "CONFIRM_PASSWORD": "CONFIRM PASSWORD",
+   "FORGOT_PASSWORD": "FORGOT PASSWORD?",
+   "LOGIN": "LOGIN",
+   "CREATE_ACCOUNT": "CREATE ACCOUNT",
+   "CONNECT_FACEBOOK": "CONNECT WITH FACEBOOK",
+   "RESET_PASSWORD": "RESET PASSWORD",
+   "STILL_DONT_HAVE": "Still don't have an account?",
+   "REGISTER_NOW": "Register now!",
+   "BY_CREATING": "By creating your account you agree with our",
+   "TERMS_POLICY": "Terms and Policy",
+   "FORGOT_YOUR": "FORGOT YOUR PASSWORD?",
+   "ENTER_RESET_EMAIL": "Enter your email address below to receive your password reset instructions.",
+   "OR": "OR",
+
+   "TAKE_PHOTO": "Take Photo",
+   "PICK_FROM_LIBRARY": "Pick From Library",
+   "CANCEL": "Cancel",
+
+   "YES": "Yes",
+   "NO": "No",
+}
+
