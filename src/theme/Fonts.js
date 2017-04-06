@@ -65,20 +65,10 @@ const style = {
     fontSize: size.h6,
     backgroundColor: 'transparent',
   },
-  h5_regular: {
-    fontFamily: type.regular,
-    fontSize: size.h5,
-    backgroundColor: 'transparent',
-  },
   buttonText: {
     fontFamily: type.bold,
     fontSize: size.h4,
     color: 'white',
-    backgroundColor: 'transparent',
-  },
-  menuButtonText: {
-    fontFamily: type.regular,
-    fontSize: size.h5,
     backgroundColor: 'transparent',
   },
   bottomText: {
@@ -92,53 +82,11 @@ const style = {
     backgroundColor: 'transparent',
     textDecorationLine: 'underline',
   },
-  bottomTextSmall: {
-    fontFamily: type.regular,
-    fontSize: size.default,
-    backgroundColor: 'transparent',
-  },
-  hyperButtonTextSmall: {
-    fontFamily: type.semibold,
-    fontSize: size.default,
-    backgroundColor: 'transparent',
-    textDecorationLine: 'underline',
-  },
-  hyperlinkText: {
-    fontFamily: type.regular,
-    fontSize: size.h6,
-    backgroundColor: 'transparent',
-    textDecorationLine: 'underline',
-  },
-  tabButtonText: {
-    fontFamily: type.regular,
-    fontSize: 10,
-    backgroundColor: 'transparent',
-  },
-  searchBarText: {
-    fontFamily: type.regular,
-    fontSize: size.h6,
-    color: Colors.textThird,
-  },
-  defaultText: {
-    fontFamily: type.regular,
-    fontSize: size.default,
-    backgroundColor: 'transparent',
-  },
-  defaultSemiBoldText: {
-    fontFamily: type.semibold,
-    fontSize: size.default,
-    backgroundColor: 'transparent',
-  },
   listItemTitleText: {
     fontFamily: type.semibold,
     fontSize: size.h5,
     backgroundColor: 'transparent',
     color: Colors.textThird,
-  },
-  listItemNameText: {
-    fontFamily: type.semibold,
-    fontSize: size.default,
-    backgroundColor: 'transparent',
   },
   listItemDescriptionText: {
     fontFamily: type.regular,

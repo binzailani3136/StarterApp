@@ -17,16 +17,13 @@ const metrics = {
   appleSize: sHeight / 13,
   contentHeight: sHeight - 110,
   listItemWidth: sWidth - (dMargin * 2),
-
   buttonWidth: width * 0.8,
   buttonHeight: height / 15,
   logoSize: width / 3,
   footerHeight: width / 7,
   androidMarginBottom: bottomMargin,
-  sliderThumbSize: 25,
   statusBarHeight: 20,
   circleBtnSize: 50,
-
   iconSizeSmall: 15,
 };
 

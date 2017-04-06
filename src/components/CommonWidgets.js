@@ -124,38 +124,6 @@ const CommonWidgets = {
       </View>
     );
   },
-  renderUserListItem(item, onPress, showBorderTop = true) {
-    return (
-      <MKButton
-        key={item.id}
-        style={{ width: Metrics.screenWidth,
-          height: Metrics.screenHeight / 10,
-          borderTopWidth: showBorderTop === true ? 1 : 0,
-          borderBottomWidth: showBorderTop === false ? 1 : 0,
-          borderColor: Colors.borderPrimary,
-          flexDirection: 'row',
-          backgroundColor: 'transparent' }}
-        onPress={onPress}>
-        <View style={[Styles.center, { flex: 3 }]}>
-          <Image
-            style={Styles.avatarMedium}
-            source={{ uri: item.avatar }} />
-        </View>
-        <View style={[{ flex: 8, justifyContent: 'center', marginLeft: 10 }]}>
-          <Text style={[Fonts.style.h6, { color: Colors.brandPrimary }]}>
-            {item.name}
-          </Text>
-          <Text style={Fonts.style.defaultText}>
-            {item.occupation}
-          </Text>
-          <Text style={Fonts.style.listItemDescriptionText}>
-            30 posts and 105 apples ate.
-          </Text>
-        </View>
-        {CommonWidgets.renderForwardIcon()}
-      </MKButton>
-    );
-  },
   renderTopicListItem(item, onPress) {
     return (
       <MKButton
@@ -231,13 +199,6 @@ const CommonWidgets = {
   },
 
 
-  renderFieldTitle(text) {
-    return (
-      <Text style={Styles.fieldTitleText}>
-        {text}
-      </Text>
-    );
-  },
   renderSettingSwitchGroup(title, desc, onChange) {
     return (
       <View>
