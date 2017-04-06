@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { BackAndroid, Platform, StatusBar, View, Navigator } from 'react-native';
 import { connect } from 'react-redux';
+import Drawer from 'react-native-drawer';
 
 import { popRoute } from '@actions/route';
+import { closeDrawer } from './actions/drawer';
+
 import { Colors } from '@theme/';
 
+import SideBar from '@components/SideBar';
 import Splash from '@containers/Splash';
 import Login from '@containers/Authentication/Login';
 import Register from '@containers/Authentication/Register';
@@ -48,11 +52,27 @@ class AppNavigator extends Component {
       return true;
     });
   }
+  componentDidUpdate() {
+    if (this.props.drawerState === 'opened') {
+      this.openDrawer();
+    }
 
+    if (this.props.drawerState === 'closed') {
+      this._drawer.close();
+    }
+  }
   popRoute() {
     this.props.popRoute();
   }
+  openDrawer() {
+    this._drawer.open();
+  }
 
+  closeDrawer() {
+    if (this.props.drawerState === 'opened') {
+      this.props.closeDrawer();
+    }
+  }
   renderScene(route, navigator) {
     switch (route.id) {
       case 'splash':
@@ -72,7 +92,34 @@ class AppNavigator extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: Colors.backgroundPrimary }}>
+      <Drawer
+        ref={(ref) => { this._drawer = ref; }}
+        type="overlay"
+        tweenDuration={150}
+        content={<SideBar navigator={this._navigator} />}
+        tapToClose
+        acceptPan={false}
+        onClose={() => this.closeDrawer()}
+        openDrawerOffset={0.2}
+        panCloseMask={0.2}
+        styles={{
+          drawer: {
+            shadowColor: '#000000',
+            shadowOpacity: 0.8,
+            shadowRadius: 3,
+          },
+        }}
+        tweenHandler={(ratio) => {  //eslint-disable-line
+          return {
+            drawer: { shadowRadius: ratio < 0.2 ? ratio * 5 * 5 : 5 },
+            main: {
+              opacity: (2 - ratio) / 2,
+            },
+          };
+        }}
+        negotiatePan
+      >
+
         <Navigator
           ref={(ref) => { this._navigator = ref; }}
           configureScene={(route) => {
@@ -85,25 +132,28 @@ class AppNavigator extends Component {
           }}
           initialRoute={{ id: (Platform.OS === 'android') ? 'splash' : 'splash' }}
           renderScene={this.renderScene.bind(this)} />
-      </View>
+      </Drawer>
     );
   }
 }
 AppNavigator.propTypes = {
   dispatch: React.PropTypes.func.isRequired,
   popRoute: React.PropTypes.func.isRequired,
+  drawerState: React.PropTypes.string,
+  closeDrawer: React.PropTypes.func,
 };
 
 function mapDispatchToProps(dispatch) {
   return {
     dispatch,
     popRoute: () => dispatch(popRoute()),
+    closeDrawer: () => dispatch(closeDrawer()),
   };
 }
 
 function mapStateToProps(state) {
-  return {
-  };
+  const drawerState = state.get('drawer').drawerState;
+  return { drawerState };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppNavigator);
